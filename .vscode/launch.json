@@ -1,0 +1,40 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - EvenOrOdd",
+            "request": "launch",
+            "mainClass": "EvenOrOdd"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - AbsoluteNumber",
+            "request": "launch",
+            "mainClass": "AbsoluteNumber"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - SimpleInterest",
+            "request": "launch",
+            "mainClass": "SimpleInterest"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Name",
+            "request": "launch",
+            "mainClass": "Name"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Madhuri",
+            "request": "launch",
+            "mainClass": "Madhuri"
+        },
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - HelloWorld",
+            "request": "launch",
+            "mainClass": "HelloWorld"
+        }
+    ]
+}
