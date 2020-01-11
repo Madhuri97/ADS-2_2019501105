@@ -70,6 +70,6 @@ public class WordNetD {
         WordNetD data = new WordNetD();
         data.hypernyms();
         System.out.println("length:   " + s.length(1, 81));
-        System.out.println("ancestor: " + s.ancestor(7, 90));
+        System.out.println("ancestor: " + s.ancestor(90, 2000));
     }
 }
