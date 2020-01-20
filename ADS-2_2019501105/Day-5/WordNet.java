@@ -3,16 +3,16 @@ import java.util.*;
 /**
  * @author Madhuri
  */
-public class WordNetD {
+public class WordNet {
     ArrayList<String> synsetid = new ArrayList<String>();   //synset id
     ArrayList<String> synsets = new ArrayList<String>();    //words of synset
     ArrayList<String> hypernyms = new ArrayList<String>();  //hypernyms
-    ArrayList<String> hypnymsEdg = new ArrayList<String>(); //hypernyms edges 
-    DiGraph ver;                                            //vertex is type od digraph-
+    ArrayList<String> hypnymsEdg = new ArrayList<String>(); //hypernyms edges
+    HashMap<Integer, Bag<String>> id; 
+    HashMap<Integer, Bag<Integer>> word;
+    DiGraph ver;                                            //vertex is type od digraph
     static SAP s;                                           //object of SAP as s
-    public WordNetD() throws Exception {
-        id = new HashMap<Integer, Bag<String>>();
-        word = new HashMap<String, Bag<Integer>>();
+    public WordNet() throws Exception {
         this.synsets();
         ver = new DiGraph(synsetid.size());
         this.hypernyms();
@@ -68,11 +68,32 @@ public class WordNetD {
         sc.close();
     }
 
+    public Iterable<String> nouns() {
+        return word.KeySet();
+    }
+
+    public boolean isNoun(String wrd) {
+        return word.containsKey(wrd);
+    }
+
+    public int distance(String nounA, String nounB) throws Exception {
+        if(!isNoun(nounA) || !isNoun(nounB)) {
+            throw new IllegalArgumentException();
+        }
+        return sap.length(id.get(nounA), id.get(nounB));
+    }
+
+    public String sap(String nounA, String nounB) {
+        if(!isNoun(nounA) || !isNoun(nounB)){
+            throw new IllegalArgumentException();
+        }
+        return word.get(sap.ancestor(id.get(nounA), id.get(nounB)));
+    }
+    
     public static void main(String[] args) throws Exception {
-        WordNetD data = new WordNetD();
+        WordNet data = new WordNet();
         data.hypernyms();
         System.out.println("length:   " + s.length(1, 81));
         System.out.println("ancestor: " + s.ancestor(90, 2000));
-        System.out.println("distance: " + s.distance("horse","cat"));
     }
 }

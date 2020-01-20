@@ -7,12 +7,10 @@ public class WordNetD {
     ArrayList<String> synsetid = new ArrayList<String>();   //synset id
     ArrayList<String> synsets = new ArrayList<String>();    //words of synset
     ArrayList<String> hypernyms = new ArrayList<String>();  //hypernyms
-    ArrayList<String> hypnymsEdg = new ArrayList<String>(); //hypernyms edges 
-    DiGraph ver;                                            //vertex is type od digraph-
+    ArrayList<String> hypnymsEdg = new ArrayList<String>(); //hypernyms edges
+    DiGraph ver;                                            //vertex is type od digraph
     static SAP s;                                           //object of SAP as s
     public WordNetD() throws Exception {
-        id = new HashMap<Integer, Bag<String>>();
-        word = new HashMap<String, Bag<Integer>>();
         this.synsets();
         ver = new DiGraph(synsetid.size());
         this.hypernyms();
@@ -73,6 +71,5 @@ public class WordNetD {
         data.hypernyms();
         System.out.println("length:   " + s.length(1, 81));
         System.out.println("ancestor: " + s.ancestor(90, 2000));
-        System.out.println("distance: " + s.distance("horse","cat"));
     }
 }

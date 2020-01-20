@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Solution {
     HashMap<Integer,String> hm = new HashMap<Integer,String>();  
     HashMap<Integer,String> hm1 = new HashMap<Integer,String>();
-    ArrayList<String> recid = new ArrayList<String>(); //reciever id
+    ArrayList<String> recid = new ArrayList<String>();          //reciever id
     DiGraph ver;                                            
     public Solution() throws Exception {
         this.emails();
