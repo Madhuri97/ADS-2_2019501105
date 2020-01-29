@@ -2,6 +2,8 @@ public class Outcast {
     private final WordNet wordnet;
        public Outcast(WordNet wordnet) {
         this.wordnet = wordnet;
+
+        
        }    
        public String outcast(String[] nouns) {
         int d = 0;
